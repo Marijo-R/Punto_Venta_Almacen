@@ -12,28 +12,30 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-content">
-                                <form class="col s12">
+                                <form class="col s12" novalidate method="POST" action="{{ route('tipo_medida.update',  $medida->id_medida) }}">
+                                    @csrf
+                                    @method('PUT')
                                     <div class="row">
                                         <div class="col s12 m6 ">
                                             <label for="codigo" class="form-label">Unidad de medida</label>
-                                            <input type="varchar" class="form-control" id="codigo" class="validate" placeholder="Unidad de medida" value="Kilogramo">
+                                            <input type="varchar" class="form-control" name="unidad_medida" id="unidad_medida" class="validate" placeholder="Unidad de medida" required maxlength="15" value="{{ $medida->unidad_medida}}">
                                         </div>
                                         <div class="col s12 m6 ">
                                             <label for="codigo_alterno" class="form-label">Simbolo</label>
-                                            <input type="varchar" class="form-control" id="codigo_alterno" class="validate" placeholder="Simbolo" value="kg">
+                                            <input type="varchar" class="form-control" name="simbolo" id="simbolo" class="validate" placeholder="Simbolo" required maxlength="5" value="{{ $medida->simbolo}}">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col s12 m11 offset-m1 xl7 offset-xl1 ">
                                             <div class="btn-group right">
-                                                <a href="{{ route('medida') }}" class="btn-danger dropdown-toggle btn">
+                                                <a href="{{ url('tipo_medida') }}" class="btn-danger dropdown-toggle btn">
                                                     <i class="material-icons left">cancel</i>CANCELAR
                                                 </a>
                                             </div>
-                                            <div class="btn-group col-sm-2 right">
-                                                <a onclick="Alertabtn()" href="{{ route('medida') }}" class="btn btn-success">
-                                                    <i class="material-icons left">check_circle</i>GUARDAR
-                                                </a>
+                                            <div class="btn-group col-sm-2 right"> 
+                                            <button type="submit" class="btn btn-success" value="Guardar">
+                                                <i class="material-icons left">check_circle</i>Guardar
+                                            </button>
                                             </div>
                                         </div>
                                     </div>

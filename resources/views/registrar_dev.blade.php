@@ -89,8 +89,7 @@
                                             placeholder="Comentarios..." data-length="255"></textarea>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <table class="table-responsive-sm table-striped table-bordered table-hover">
+                                    <table class="table table-striped table-bordered table-hover">
                                         <thead>
                                             <tr>
                                                 <th class="center">No.</th>
@@ -122,7 +121,6 @@
                                                 </td>
                                             </tr>
                                     </table>
-                                </div>
                                 <div class="row">
                                     <div class="col s12 m2">
                                         <label for="email" class="form-label">Subtotal</label>

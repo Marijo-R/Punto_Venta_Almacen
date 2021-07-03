@@ -18,12 +18,12 @@
                       <div class=" col-md-12">
                         <div class="row">
                           <div class="btn-group col-md-2 right">
-                            <a href="{{ route('medida.pap') }}" class="btn btn-warning">
+                            <a href="{{ url('papelera_medida') }}" class="btn btn-warning">
                               <i class="material-icons left">delete_sweep</i>PAPELERA
                             </a>
                           </div>
                           <div class="btn-group col-md-2 right">
-                            <a href="{{ route('medida.reg') }}" class="btn btn-success">
+                            <a href="{{ route('tipo_medida.create') }}" class="btn btn-success">
                               <i class="material-icons left">queue</i>REGISTRAR
                             </a>
                           </div>
@@ -43,15 +43,17 @@
                             </div>
                           </div>
                           <div class="col-sm-3 right">
-                            <div class="dataTables_length" id="dataTables-example_length">
-                              <label>
-                                Buscar
-                                <input type="search" class="form-control input-sm" aria-controls="dataTables-example">
-                              </label>
-                              <button type="submit" class="btn btn-default">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                            </div>
+                            <form action="{{ url('tipo_medida') }}" method="GET">
+                              <div class="dataTables_length" id="dataTables-example_length">
+                                <label>
+                                  Buscar
+                                  <input type="text" name="texto" value="{{ $texto }}" class="form-control input-sm" aria-controls="dataTables-example">
+                                </label>
+                                <button type="submit" class="btn btn-default" value="Buscar">
+                                  <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                              </div>
+                            </form>
                           </div>
                         </div>
                       </div>
@@ -65,42 +67,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                          <tr class="odd gradeX">
-                            <td class="center">1</td>
-                            <td class="center">Kilogramos</td>
-                            <td class="center">kg</td>
-                            <td class="center">
-                              <button  onclick="location.href='{{ route('medida.act') }}'" type="submit" class="btn-primary dropdown-toggle btn"><i class="fa fa-pencil-square"></i></button>
-                              <button type="submit" class="btn btn-danger" onclick="AlertaEliminar()" ><i class="fa fa-trash-o"></i></button>
-                            </td>
-                          </tr>  
-                          <tr class="even gradeC">
-                            <td class="center">2</td>
-                            <td class="center">Gramos</td>
-                            <td class="center">g</td>
-                            <td class="center">
-                              <button  onclick="location.href='{{ url('/actualizar_cli') }}'" type="submit" class="btn-primary dropdown-toggle btn"><i class="fa fa-pencil-square"></i></button>
-                              <button type="submit" class="btn btn-danger" onclick="AlertaEliminar()" ><i class="fa fa-trash-o"></i></button>
-                            </td>
-                          </tr>  
-                          <tr class="odd gradeA">
-                            <td class="center">3</td>
-                            <td class="center">Metros</td>
-                            <td class="center">m</td>
-                            <td class="center">
-                              <button  onclick="location.href='{{ url('/actualizar_cli') }}'" type="submit" class="btn-primary dropdown-toggle btn"><i class="fa fa-pencil-square"></i></button>
-                              <button type="submit" class="btn btn-danger" onclick="AlertaEliminar()" ><i class="fa fa-trash-o"></i></button>
-                            </td>
-                          </tr> 
-                          <tr class="odd gradeA">
-                            <td class="center">4</td>
-                            <td class="center">Pieza</td>
-                            <td class="center">pz</td>
-                            <td class="center">
-                              <button  onclick="location.href='{{ route('proveedor.act') }}'" type="submit" class="btn-primary dropdown-toggle btn"><i class="fa fa-pencil-square"></i></button>
-                              <button type="submit" class="btn btn-danger" onclick="AlertaEliminar()" ><i class="fa fa-trash-o"></i></button>
-                            </td>
-                          </tr> 
+                          @if (count($medidas)<=0)
+                            <tr>
+                              <td class="center" colspan="4">No hay resultados</td>
+                            </tr>
+                          @else
+                            @foreach($medidas as $medida)
+                            <tr class="odd gradeX">
+                              <td class="center">{{ $loop->index + 1 }}</td>
+                              <td class="center">{{ $medida->unidad_medida }}</td>
+                              <td class="center">{{ $medida->simbolo }}</td>
+                              <td class="center">
+                                <a href="{{ route('tipo_medida.edit', $medida->id_medida) }}" class="btn-primary dropdown-toggle btn">
+                                  <i class="fa fa-pencil-square"></i>
+                                </a>
+                                <form action="{{ route('tipo_medida.destroy', $medida->id_medida) }}" method="POST">
+                                  {{ method_field('DELETE') }}
+                                  {{ @csrf_field() }}
+                                  <button type="submit" onclick="return confirm('¿Esta seguro de eliminar?')" class="btn btn-danger">
+                                    <i class="fa fa-trash-o"></i>
+                                  </button>
+                                </form>
+                              </td>
+                            </tr>
+                            @endforeach
+                          @endif
                         </tbody>
                       </table>  
 

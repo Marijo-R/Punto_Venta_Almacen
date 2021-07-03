@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TipoMedidaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,21 +54,26 @@ Route::get('/papelera_prod', function () {
     return view('papelera_prod');
 })->name('producto.pap');
 
-Route::get('/lista_medidas', function () {
-    return view('lista_medidas');
-})->name('medida');
+//Tipo medida
+Route::resource('tipo_medida', TipoMedidaController::class);
+Route::get('papelera_medida', [TipoMedidaController::class, 'recycle']);
+Route::get('papelera_medida/{id_medida}', [TipoMedidaController::class, 'recover'])->name('papelera');
+/*
+Route::get('/lista_medidas', [TipoMedidaController::class, 'index'])->name('medida');
 
-Route::get('/registrar_med', function () {
-    return view('registrar_med');
-})->name('medida.reg');
+Route::get('/registrar_med', [TipoMedidaController::class, 'create'])->name('medida.cre');
 
-Route::get('/actualizar_med', function () {
-    return view('actualizar_med');
-})->name('medida.act');
+Route::post('/registrar_med/store', [TipoMedidaController::class, 'store'])->name('medida.sto');
+
+Route::get('/actualizar_med/{id_medida}', [TipoMedidaController::class, 'edit'])->name('medida.edi');
+
+Route::put('/actualizar_med/update/{id_medida}', [TipoMedidaController::class, 'update'])->name('medida.upd');
+
+Route::get('/eliminar_med/{id_medida}', [TipoMedidaController::class, 'destroy'])->name('medida.des');
 
 Route::get('/papelera_med', function () {
     return view('papelera_med');
-})->name('medida.pap');
+})->name('medida.pap');*/
 
 Route::get('/lista_orden', function () {
     return view('lista_orden');

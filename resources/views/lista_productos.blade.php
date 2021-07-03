@@ -78,77 +78,17 @@
                                             <td class="center">Par Direccional</td>
                                             <td class="center">Par Direccional Cuadrada Trailer</td>
                                             <td class="center">Kenworth Gel</td>
-                                            <td class="center">15</td>
+                                            <td class="center">16</td>
                                             <td class="center">$1100.00</td>
                                             <td class="center">$999.00</td>
                                             <td class="center">
+                                                <button data-toggle="modal" data-target="#modalempleado" type="submit"
+                                                    class="btn btn-info"><i class="fa fa-eye"></i></button>
                                                 <button onclick="location.href='{{ route('producto.act') }}'"
                                                     type="submit" class="btn-primary dropdown-toggle btn"><i
                                                         class="fa fa-pencil-square"></i></button>
                                                 <button type="submit" class="btn btn-danger" onclick="AlertaEliminar()"><i
                                                         class="fa fa-trash-o"></i></button>
-                                                <button data-toggle="modal" data-target="#modalempleado" type="submit"
-                                                    class="btn btn-info"><i class="fa fa-eye"></i></button>
-
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeC">
-                                            <td class="center">1202</td>
-                                            <td class="center"></td>
-                                            <td class="center">Capuchones Cromados</td>
-                                            <td class="center">Capuchones Cromados Lisos</td>
-                                            <td class="center"></td>
-                                            <td class="center">45</td>
-                                            <td class="center">$159.99</td>
-                                            <td class="center">$129.90</td>
-                                            <td class="center">
-                                                <button onclick="location.href='{{ url('/actualizar_cli') }}'"
-                                                    type="submit" class="btn-primary dropdown-toggle btn"><i
-                                                        class="fa fa-pencil-square"></i></button>
-                                                <button type="submit" class="btn btn-danger" onclick="AlertaEliminar()"><i
-                                                        class="fa fa-trash-o"></i></button>
-                                                <button data-toggle="modal" data-target="#modalempleado" type="submit"
-                                                    class="btn btn-info"><i class="fa fa-eye"></i></button>
-
-                                            </td>
-                                        </tr>
-                                        <tr class="odd gradeA">
-                                            <td class="center">1203</td>
-                                            <td class="center">ESPU505</td>
-                                            <td class="center">Espejo Universal</td>
-                                            <td class="center">Espejo Trailer Universal Tipo Estrella</td>
-                                            <td class="center">Datsun</td>
-                                            <td class="center">23</td>
-                                            <td class="center">$359.90</td>
-                                            <td class="center">$299.90</td>
-                                            <td class="center">
-                                                <button onclick="location.href='{{ url('/actualizar_cli') }}'"
-                                                    type="submit" class="btn-primary dropdown-toggle btn"><i
-                                                        class="fa fa-pencil-square"></i></button>
-                                                <button type="submit" class="btn btn-danger" onclick="AlertaEliminar()"><i
-                                                        class="fa fa-trash-o"></i></button>
-                                                <button data-toggle="modal" data-target="#modalempleado" type="submit"
-                                                    class="btn btn-info"><i class="fa fa-eye"></i></button>
-
-                                            </td>
-                                        </tr>
-                                        <tr class="odd gradeA">
-                                            <td class="center">1204</td>
-                                            <td class="center"></td>
-                                            <td class="center">Perilla Palanca</td>
-                                            <td class="center">Perilla Palanca de Velocidades Granada Cromo</td>
-                                            <td class="center">Datsun</td>
-                                            <td class="center">15</td>
-                                            <td class="center">$499.99</td>
-                                            <td class="center">$449.90</td>
-                                            <td class="center">
-                                                <button onclick="location.href='{{ route('proveedor.act') }}'"
-                                                    type="submit" class="btn-primary dropdown-toggle btn"><i
-                                                        class="fa fa-pencil-square"></i></button>
-                                                <button type="submit" class="btn btn-danger" onclick="AlertaEliminar()"><i
-                                                        class="fa fa-trash-o"></i></button>
-                                                <button data-toggle="modal" data-target="#modalempleado" type="submit"
-                                                    class="btn btn-info"><i class="fa fa-eye"></i></button>
 
                                             </td>
                                         </tr>
@@ -209,7 +149,7 @@
                                                 </div>
                                                 <div class="col s12 m6">
                                                     <input type="varchar" class="form-control validate" id="email"
-                                                        disabled="disabled" placeholder="evemi1110@gmail.com">
+                                                        disabled="disabled" placeholder="" value="pz">
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -218,7 +158,7 @@
                                                 </div>
                                                 <div class="col s12 m6">
                                                     <input type="varchar" id="tel" class="form-control validate"
-                                                        disabled="disabled" placeholder="2721478987">
+                                                        disabled="disabled" placeholder="" value="16">
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -227,7 +167,7 @@
                                                 </div>
                                                 <div class="col s12 m6">
                                                     <input type="varchar" class="form-control validate" id="calle"
-                                                        disabled="disabled" placeholder="Avenida San Juan">
+                                                        disabled="disabled" placeholder="" value="30">
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -236,16 +176,7 @@
                                                 </div>
                                                 <div class="col s12 m6">
                                                     <input type="varchar" id="entre_cal" class="form-control validate"
-                                                        disabled="disabled" placeholder="Mezón y Guadalupe">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col s12 m6">
-                                                    <label for="no_int">Utilidad (%)</label>
-                                                </div>
-                                                <div class="col s12 m6">
-                                                    <input type="varchar" id="no_int" class="form-control validate"
-                                                        disabled="disabled" placeholder="18">
+                                                        disabled="disabled" placeholder="" value="10">
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -254,7 +185,7 @@
                                                 </div>
                                                 <div class="col s12 m6">
                                                     <input type="varchar" id="no_ext" class="form-control validate"
-                                                        disabled="disabled" placeholder="12">
+                                                        disabled="disabled" placeholder="" value="$1100.00">
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -263,7 +194,16 @@
                                                 </div>
                                                 <div class="col s12 m6">
                                                     <input type="varchar" class="form-control validate" id="cod_pos"
-                                                        disabled="disabled" placeholder="94760">
+                                                        disabled="disabled" placeholder="" value="$999.90">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s12 m6">
+                                                    <label for="no_int">Utilidad (%)</label>
+                                                </div>
+                                                <div class="col s12 m6">
+                                                    <input type="varchar" id="no_int" class="form-control validate"
+                                                        disabled="disabled" placeholder="" value="5">
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -272,7 +212,7 @@
                                                 </div>
                                                 <div class="col s12 m6">
                                                     <input type="varchar" id="colonia" class="form-control validate"
-                                                        disabled="disabled" placeholder="Centro">
+                                                        disabled="disabled" placeholder="" value="2">
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -281,7 +221,7 @@
                                                 </div>
                                                 <div class="col s12 m6">
                                                     <input type="varchar" id="local" class="form-control validate"
-                                                        disabled="disabled" placeholder="Acultzingo">
+                                                        disabled="disabled" placeholder="" value="">
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -290,7 +230,7 @@
                                                 </div>
                                                 <div class="col s12 m6">
                                                     <input type="varchar" class="form-control validate" id="ciudad"
-                                                        disabled="disabled" placeholder="Acultzingo">
+                                                        disabled="disabled" placeholder="" value="">
                                                 </div>
                                             </div>
                                         </form>

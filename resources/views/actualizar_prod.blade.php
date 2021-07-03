@@ -63,8 +63,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12 m4">
-                                            <label for="marca">Fecha de actualización</label>
-                                            <input id="marca" class="form-control" type="date" class="validate" placeholder="%" value="22/06/2021">
+                                            <label for="marca">Utilidad (%)</label>
+                                            <input id="marca" class="form-control" type="varchar" class="validate" placeholder="%" value="5">
                                         </div>
                                         <div class="col s12 m4">
                                             <label for="marca">Precio menudeo</label>
@@ -76,13 +76,9 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col s12 m2">
+                                        <div class="col s12 m4">
                                             <label for="marca">Comisión (%)</label>
                                             <input id="marca" class="form-control" type="varchar" class="validate" placeholder="00" value="3">
-                                        </div>
-                                        <div class="col s12 m2">
-                                            <label for="marca">Utilidad (%)</label>
-                                            <input id="marca" class="form-control" type="varchar" class="validate" placeholder="%" value="5">
                                         </div>
                                         <div class="col s12 m4">
                                             <label for="marca">Código del SAT</label>

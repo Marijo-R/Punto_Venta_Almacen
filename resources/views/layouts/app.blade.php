@@ -85,7 +85,7 @@
                             <a class="waves-effect waves-dark"><i class="fa fa-desktop"></i>Productos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li><a href="{{ route('producto') }}">Productos</a></li>
-                                <li><a href="{{ route('medida') }}">Tipos de medidas</a></li>
+                                <li><a href="{{ url('tipo_medida') }}">Tipos de medidas</a></li>
                             </ul>
                         </li>
                         <li>
@@ -111,7 +111,7 @@
         </div>
             
         @yield('content')
-                
+            
             <!-- Despliegue de submenu y boton cerrar -->
             <script src="{{ asset('assets/js/jquery-1.10.2.js') }}"></script>
             <!-- botón cerrar sesión -->
